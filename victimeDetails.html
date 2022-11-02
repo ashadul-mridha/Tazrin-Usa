@@ -6,7 +6,7 @@
 			name="viewport"
 			content="width=device-width, initial-scale=1, shrink-to-fit=no"
 		/>
-		<title>Triangle Factory Fire</title>
+		<title>Tazrin Factory Fire</title>
 		<link
 			rel="shortcut icon"
 			href="assets/images/fav.png"
@@ -34,232 +34,77 @@
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 
         <style>
-            button[aria-selected="false"] {
-                background-color: hsl(207, 100%, 100%);
-                color: var(--accent-dark);
-                outline: 1px solid #0003;
-                border: 2px solid #590100;
-                border-radius: 5px;
-                padding: 10px 7px;
+
+            .victim-full-lists{
+				display: grid;
+				grid-template-columns: repeat(1, 1fr);
+				grid-gap: 10px;
+			}
+			.victim-full-list-card{
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding: 10px 10px;
+				border: 1px solid #590100;
+				border-radius: 10px;
+			}
+			.victim-full-list-card-image{
+				height: 80px;
+				width: 80px;
+			}
+			.victim-full-list-card-image img{
+				height: 100%;
+				width: 100%;
+				border: 2px solid black;
+				border-radius: 50%;
+			}
+			.victim-full-list-card h5{
+				font-size: 20px;
+				font-weight: 500;
+				color: #590100;
+				margin-left: 5px;
+			}
+            .victimeFullDetails{
+                padding: 50px 0px;
             }
-
-            button[aria-selected="true"] {
-                background: var(--accent-blue);
-                color: #ffffff;
-                font-weight: 600;
-                border: 2px solid #590100;
-                border-radius: 5px;
-                padding: 10px 7px;
-            }
-
-            button[aria-selected="false"]:where(:hover, :focus-visible) {
-                outline: 2px solid var(--accent-blue);
-                outline-offset: -2px;
-            }
-
-            button[aria-selected="false"]:where(:hover, :focus-visible) .icon__for--tab {
-                color: var(--accent-blue);
-            }
-
-            button[aria-selected="false"]:where(:hover, :focus-visible) .text__for--tab {
-                color: var(--text-clr);
-            }
-
-            button[aria-selected="false"]:active {
-                background-color: hsl(207, 100%, 90%);
-                transform: scale(0.95);
-            }
-
-            button[aria-selected="true"] .icon__for--tab {
-                color: #fff;
-            }
-
-            .tab__navigation:is(:hover, :focus-visible)
-                button[aria-selected="false"]:not(:hover) {
-                opacity: 0.8;
-                background-color: hsl(207, 10%, 91%);
-            }
-
-            :root {
-                --accent-blue: #FFD166;
-                --accent-dark: #590100;
-                --text-clr: #590100;
-
-                --space-025: 0.25rem;
-                --space-05: 0.5rem;
-                --space-075: 0.75rem;
-                --space-1: 1rem;
-                --space-125: 1.25rem;
-                --space-15: 1.5rem;
-                --space-2: 2rem;
-
-                --width-max: 50rem;
-                --width-min: 22.5rem;
-                --fullSize: 100%;
-                --fullHeight: 100vh;
-                --flex-flow: 38rem;
-                --padding--flow: calc(var(--fullSize) - var(--space-2));
-            }
-
-            /* body {
+            .victimDetailsCard{
                 display: flex;
-                min-block-size: 100vh;
-                font-size: 16px;
-                font-family: sans-serif;
-                background-color: rgb(207, 212, 216);
-            } */
-
-            .tabs {
-                max-inline-size: min(var(--padding--flow), var(--width-max));
-                min-inline-size: var(--width-min);
-                margin: auto;
-                border-radius: 0.35rem;
-                gap: var(--space-1) 0;
-                background: hsl(207, 10%, 96%);
-                box-shadow: 0 0.5em 0.35em #0003, 0 0.8em 1.4em #0003;
-            }
-
-            .content--flow {
-                --sidebar-width: 13rem;
-                display: flex;
-                flex-wrap: wrap;
-                overflow: hidden;
-            }
-
-            .sidebar {
-                padding: var(--space-05);
-                flex: 1 1 var(--sidebar-width);
-            }
-
-            .tab__navigation {
-                display: flex;
-                flex-wrap: wrap;
-                gap: var(--space-05);
-                height: var(--fullSize);
-            }
-
-            .tab__button {
-                display: flex;
+                flex-direction: column;
                 align-items: center;
-                height: 3rem;
-                flex: auto;
-                gap: 0.55rem;
-                border: none;
-                outline: none;
-            }
-
-            .tab__button > * {
-                padding: var(--space-05);
-            }
-
-            .icon__for--tab {
-                display: inline-flex;
-                height: 2rem;
-                margin-inline: var(-space-05);
-                aspect-ratio: 1;
                 justify-content: center;
-                align-items: center;
             }
-
-            .icon__for--tab > i.fas {
-                margin: 0;
-                justify-content: flex-start;
-                display: inline-flex;
-                font-size: 1.125rem;
+            .victimDetailsCard-img{
+                height: 387px;
+                width: 47%;
+                margin: 10px 0px;
             }
-
-            .text__for--tab {
-                display: inline-flex;
-                flex-grow: 1;
-                align-items: center;
-                line-height: 1;
-                margin-inline: auto;
-                font-size: 1rem;
+            .victimDetailsCard-img img{
+                height: 100%;
+                width: 100%;
+                border-radius: 50%;
             }
-
-            @media (max-width: 639px) {
-                .sidebar {
-                    padding: unset;
-                }
-                .tab__button {
-                    flex-direction: column;
-                    border-radius: 0;
-                    min-height: 3.25rem;
-                    gap: 0;
-                }
-
-                .tab__button > * + * {
-                    min-height: 1rem;
-                }
-            }
-
-            @media (max-width: 560px) {
-                .text__for--tab {
-                    display: none;
-                }
-                .icon__for--tab {
-                    margin: auto;
-                }
-            }
-
-            .content__area {
-                display: flex;
-                flex-grow: 999;
-                min-height: 20rem;
-                justify-content: start;
-                flex-basis: calc((var(--flex-flow) - var(--fullSize)) * 999);
-                position: relative;
-            }
-
-            .tab__content {
-                display: flex;
-                flex: 1;
-                justify-content: center;
-                margin-inline: auto;
-                padding: var(--space-05);
-            }
-
-            .span-tag {
-                position: absolute;
-                right: 0;
-                top: 0;
-                line-height: 1;
-                color: var(--accent-dark);
-                opacity: 0.2;
-                font-size: clamp(4rem, (-1.97rem + 20.78vw), 2rem);
+            .victimDetailsCard h3{
+                font-size: 22px;
                 font-weight: 500;
+                color: #590100;
+                margin: 5px 0px;
             }
-
-            .title {
-                line-height: 1.6;
-                padding-block-start: 36px;
-                color: var(--accent-blue);
-                text-align: center;
-                font-size: 2rem;
-                text-transform: capitalize;
+            .victimDetailsCard h6{
+                font-size: 18px;
+                font-weight: 500;
+                color: #000;
+                margin: 5px 0px;
             }
-            .details{
-                line-height: 1.6;
-                padding-block-start: var(--space-025);
-                color: var(--accent-dark);
-                text-align: center;
-                font-size: 1rem;
-                text-transform: capitalize;
+            .victimDetailsCard p{
+                font-size: 15px;
+                font-weight: 500;
+                color: #000;
+                margin: 5px 0px;
+                text-align: justify;
             }
-
-            .text {
-                max-width: 45ch;
-                text-align: center;
-                margin-inline: var(--space-1);
-                color: var(--text-clr);
-                font-size: 1.125rem;
-            }
-
-            .victimeDetails{
-                margin: 100px 0px;
-            }
-
         </style>
+
+
 	</head>
 
 	<body>
@@ -283,8 +128,10 @@
 								</li> -->
 								<li>
 									<a href="#" class="voltterr-btn d-block">
-										<p>The 1911</p>
-										<strong>Triangle Factory Fire</strong>
+										<!-- <p>The 1911</p> -->
+                                        <br>
+										<strong>Tazrin Factory Fire</strong>
+                                        <br>
 									</a>
 								</li>
 							</ul>
@@ -382,82 +229,66 @@
 		</header>
 
         <!-- ******************** Victime List Starts Here ******************* -->
-		<section class="victimeDetails">
+        <section class="victimeFullDetails">
             <div class="container">
                 <div class="row">
-                    <div class="col-12">
-                        <article class="tabs content--flow">
-                            <aside class="sidebar">
-                                <nav role="tablist" class="tab__navigation">
-                                    <button role="tab" aria-selected="true" class="tab__button" id="1">
-                                        <span class="icon__for--tab">
-                                            <i class="fas fa-user"></i>
-                                        </span>
-                                        <span class="text__for--tab">Image</span>
-                                    </button>
-                                    <button role="tab" aria-selected="false" class="tab__button" id="2">
-                                        <span class="icon__for--tab">
-                                            <i class="fas fa-user"></i>
-                                        </span>
-                                        <span class="text__for--tab">Personal</span>
-                                    </button>
-                                    <button role="tab" aria-selected="false" class="tab__button" id="3">
-                                        <span class="icon__for--tab">
-                                            <i class="fas fa-home"></i>
-                                        </span>
-                                        <span class="text__for--tab">Address</span>
-                                    </button>
-                                    <button role="tab" aria-selected="false" class="tab__button" id="4">
-                                        <span class="icon__for--tab">
-                                            <i class="fas fa-shield-alt"></i>
-                                        </span>
-                                        <span class="text__for--tab">Tab 04</span>
-                                    </button>
-                                    <button role="tab" aria-selected="false" class="tab__button" id="5">
-                                        <span class="icon__for--tab">
-                                            <i class="fas fa-power-off"></i>
-                                        </span>
-                                        <span class="text__for--tab">Tab 05</span>
-                                    </button>
-                                </nav>
-                            </aside>
-                            <main class="content__area">
-                                <div class="tab__content">
-                                    <div role="tabpanel" aria-labelledby="1">
-                                        <img src="./assets/images/kobor.jpg" alt="">
-                                        <h1 class="title">John Doe</h1>
-                                        <!-- <span class="span-tag">IMAGES</span> -->
-                                    </div>
-                                    <div role="tabpanel" aria-labelledby="2" hidden>
-                                        <h1 class="title">John Doe</h1>
-                                        <h5 class="details">24 years old</h5>
-                                        <h5 class="details">Female</h5>
-                                        <h5 class="details">Single</h5>
-                                        <h5 class="details">Jewish</h5>
-                                        <span class="span-tag">BIO</span>
-                                    </div>
-                                    <div role="tabpanel" aria-labelledby="3" hidden>
-                                        <h1 class="title">Born in Romania</h1>
-                                        <h5 class="details">Lived in the US for 3 1/2 months</h5>
-                                        <h5 class="details">324 East 6th Street, New York, NY</h5>
-                                        <h5 class="details">Buried in Mt Richmond Cemetery</h5>
-                                        <span class="span-tag">Address</span>
-                                    </div>
-                                    <div role="tabpanel" aria-labelledby="4" hidden>
-                                        <h1 class="title">Fourth Tab</h1>
-                                        <span class="span-tag">04</span>
-
-                                        <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse at delectus vel voluptate consequatur ea vero odio, quo quae aliquid ad! Repellat ipsam voluptatem nulla.</p>
-                                    </div>
-                                    <div role="tabpanel" aria-labelledby="5" hidden>
-                                        <h1 class="title">Last Tab</h1>
-                                        <span class="span-tag">05</span>
-
-                                        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, libero voluptas nihil sit unde eveniet minus quia architecto!</p>
-                                    </div>
-                                </div>
-                            </main>
-                        </article>
+                    <div class="col-lg-9">
+                        <div class="victimDetailsCard">
+                            <div class="victimDetailsCard-img">
+                                <img src="./assets/images/victim.jpg" alt="">
+                            </div>
+                            <h3>মরিয়মের </h3>
+                            <h6> ২০ বছর বয়স</h6>
+                            <h6> মহিলা </h6>
+                            <h6> বিবাহিত </h6>
+                            <p>মরিয়মের বাড়ী ভোলা জেলায়। তারা ২ ভাই এবং ৪ বোন। মরিয়ম ভাই-বোনদের মধ্যে ৪থ ছিল। মাদ্রাসায় ৯ম ক্লাশ পযন্ত পড়াশুনা করেছে।  ২০১১ সালের দিকে কোন একসময় সে রাগ করে বাড়ী থেকে পালিয়ে ঢাকায় চলে আসে। আশুলিয়া এলাকায় এক গামেন্টসে কাজ নেয়। কিছুদিন এখানে কাজ করার পর নিশ্চিন্তপুরে তাজরিন গামেন্টস ফ্যাক্টরীতে অপারেটর পদে যোগদান করে। তাজরিনের প্রায় গাঁঘেষে ছিল আল আমিন মোল্লার মেকানিকস এর দোকান। আসা-যাওয়ার পথে আল আমিনের সাথে মরিয়মের পরিচয় হয়, তারপর বিয়ে। তাজরিন গামেন্টস এর ঠিক উল্টোদিকে তারা বাসা ভাড়া করে থাকতো।
+                            ২৪শে নভেম্বর ২০১২ সালে যখন আগুন লাগে, তাজরিনে তার চাকুরী জীবনের এক বছরও পার হয়নি। প্রতিদিনকার মত সেদিনও মরিয়ম ভোর ৫টায় উঠে রান্না-বান্না ও অন্যান্য কাজ সেরে আল আমিনসহ সকাল ৭.৫৫ মিনিটে বাসা থেকে বেরিয়ে যায়। সেটাই তাদের দুজনের শেষ দেখা। মরিয়ম তাজরীনে যায়, আল আমিন দোকানের দিকে রওনা দেয়। তাজরিনে হাজিরা দেয়ার সময় সকাল ৮টা। ফ্যাক্টরির কাছে বাসা থাকায় ৫ মিনিটের মধ্যে পোঁছে যেতো।
+                            সন্ধ্যার দিকে, মাগরিবের নামাজের সময়, আল আমিনের ফোনে মরিয়মের কল আসে। আল আমিন ফোন ধরতেই মরিয়ম চিৎকার করে বলে,
+                            “আগুন লাগছে, ফ্যাক্টরীর ভিতর আগুন লাগছে.. “
+                            তারপর ফোনটা বন্ধ হয়ে যায়। আল আমিন দোকান থেকে ছুটে বের হয়ে তাজরিনের সামনে আসে, ইতিমধ্যে অনেক লোক রাস্তায় এসে জড়ো হয়েছে। গেট বন্ধ দেখে আল আমিন ফ্যাক্টরীর পিছন দিকে ছুটে যায়। এভাবে কয়েকবার সামনে-পিছনে দৌড়াদৌড়ি করার পর, একসময় ফ্যাক্টরীর উত্তরদিকে কয়েকটা অসার শরীর পড়ে থাকতে দেখতে পায়। পাশ থেকে একজন বললো, কিছুক্ষন আগেও ওরা বেঁচে ছিল। একটা শরীরের সামনে এসে আল আমিন দাঁড়িয়ে যায়। যারা অথর শরীরগুলো বহন করে নিয়ে এসেছে তাদের মধ্যে একজন বললো,  
+                            ‘ মারার যাওয়ার আগে বলে গেছে তার স্বামীর নাম আল আমিন মোল্লা ‘
+                            নয় তলা দালানের তাজরিন গামেন্টস এর ৬ষ্ট তলায় মরিয়ম কাজ করতো। আগুন লেলিহান শিখা থেকে বাচঁতে লাফ দিয়েছিল, নীচে শানের উপর পড়ে মাথা থেতলে গেছে</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="victim-full-lists">
+                            <a href="./victimeDetails.html" class="victim-full-list-card">
+								<div class="victim-full-list-card-image">
+                                	<img src="./assets/images/kobor.jpg" alt="">
+								</div>
+                                <h5>Adler , Lizzie</h5>
+                            </a>
+                            <a href="./victimeDetails.html" class="victim-full-list-card">
+								<div class="victim-full-list-card-image">
+                                	<img src="./assets/images/kobor.jpg" alt="">
+								</div>
+                                <h5>Jhon Doe</h5>
+                            </a>
+                            <a href="./victimeDetails.html" class="victim-full-list-card">
+								<div class="victim-full-list-card-image">
+                                	<img src="./assets/images/kobor.jpg" alt="">
+								</div>
+                                <h5>Adam Smith</h5>
+                            </a>
+                            <a href="./victimeDetails.html" class="victim-full-list-card">
+								<div class="victim-full-list-card-image">
+                                	<img src="./assets/images/kobor.jpg" alt="">
+								</div>
+                                <h5>Naseem Shah</h5>
+                            </a>
+                            <a href="./victimeDetails.html" class="victim-full-list-card">
+								<div class="victim-full-list-card-image">
+                                	<img src="./assets/images/kobor.jpg" alt="">
+								</div>
+                                <h5>JK Flip</h5>
+                            </a>
+                            <a href="./victimeDetails.html" class="victim-full-list-card">
+								<div class="victim-full-list-card-image">
+                                	<img src="./assets/images/kobor.jpg" alt="">
+								</div>
+                                <h5>Murina</h5>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -469,15 +300,17 @@
 					<div class="col-md-4">
 						<div class="footer-logo-section">
                             <a href="#" class="voltterr-btn d-block">
-								<p>The 1911</p>
-								<strong>Triangle Factory Fire</strong>
+								<!-- <p>The 1911</p> -->
+                                <br>
+								<strong>Tazrin Factory Fire</strong>
+                                <br>
 							</a>
                         </div>
 					</div>
 					<div class="col-md-4">
 						<div class="d-flex align-items-center h-100">
                             <div class="footer-location">
-                                <p>7/8 TriangleFire Factory, USA</p>
+                                <p>7/8 TazrinFire Factory, USA</p>
                                 <p>Telephone: 9144085; 9127639</p>
                                 <p>Fax: +880-2-8122250</p>
                                 <p>Email: email@gamil.org</p>

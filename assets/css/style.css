@@ -302,8 +302,13 @@ body {
 }
 
 /* =================== Header Style Starts Here =================== */
+header{
+	background-image: url('../images/about-us/TriangleFire.jpeg');
+	background-position: center;
+    background-size: cover;
+}
 header .header-top {
-	background-color: #fff;
+	background-color: rgba(255, 255, 255, 0.329);
 	padding: 10px;
 }
 header .header-top .bonto ul {
@@ -332,7 +337,7 @@ header .header-top .bonto ul .voltterr-btn {
 	border-radius: 5px;
 }
 header .headwe-nav {
-	background-color: #dddddd;
+	background-color: #a3a3a3fa;
 }
 header .headwe-nav .nav-div .navbar {
 	padding: 0px;
@@ -367,7 +372,7 @@ header .headwe-nav .social-div ul li a i {
 }
 .subMenuSection{
 	border-bottom: 1px solid #590100;
-	background-color: #fcf6f6;
+	background-color: #fcf6f6d5;
 }
 
 header .subMenu{
