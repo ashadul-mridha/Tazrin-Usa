@@ -308,7 +308,8 @@ header{
     background-size: cover;
 }
 header .header-top {
-	background-color: rgba(255, 255, 255, 0.329);
+	background-color: #f2fef2;
+	/* background-color: #797474; */
 	padding: 10px;
 }
 header .header-top .bonto ul {
@@ -337,7 +338,7 @@ header .header-top .bonto ul .voltterr-btn {
 	border-radius: 5px;
 }
 header .headwe-nav {
-	background-color: #a3a3a3fa;
+	background-color: #a3a3a3;
 }
 header .headwe-nav .nav-div .navbar {
 	padding: 0px;
@@ -564,6 +565,7 @@ background: transparent !important;
 /* =================== Header Style Starts Here =================== */
 .about-us {
 	padding: 50px;
+	background-color: #FFF;
 }
 @media screen and (max-width: 940px) {
 	.about-us {
@@ -1165,7 +1167,7 @@ background: transparent !important;
 .footer-cont {
   background-color: rgb(216, 215, 215);
 	color: rgb(49, 49, 49);
-	padding: 50px;
+	/* padding: 50px; */
 }
 @media screen and (max-width: 940px) {
 	.footer-cont {
