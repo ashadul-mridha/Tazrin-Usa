@@ -303,7 +303,7 @@ body {
 
 /* =================== Header Style Starts Here =================== */
 header{
-	background-image: url('../images/about-us/TriangleFire.jpeg');
+	/* background-image: url('../images/about-us/TriangleFire.jpeg'); */
 	background-position: center;
     background-size: cover;
 }
@@ -1165,7 +1165,7 @@ background: transparent !important;
 }
 
 .footer-cont {
-  background-color: rgb(216, 215, 215);
+  /* background-color: rgb(216, 215, 215); */
 	color: rgb(49, 49, 49);
 	/* padding: 50px; */
 }
