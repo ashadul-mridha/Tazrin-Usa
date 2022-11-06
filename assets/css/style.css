@@ -114,7 +114,7 @@ strong {
 }
 
 body {
-	background-color: #f1f1f145 !important;
+	/* background-color: #f1f1f145 !important; */
 	font-family: "Roboto", sans-serif;
 	color: #6a6a6a;
 	overflow-x: hidden;
